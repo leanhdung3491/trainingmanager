@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 
 
 #gem 'bootstrap-sass'
-gem 'mysql'
+#gem 'mysql'
 gem 'bcrypt-ruby', '3.1.2'
 #gem 'faker', '1.1.2'
 #gem 'will_paginate', '3.0.4'
@@ -58,7 +58,7 @@ group :production do
 end
 
 gem 'thin'
-gem'therubyracer'
+gem 'therubyracer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
