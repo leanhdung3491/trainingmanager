@@ -1,0 +1,41 @@
+<h1>List Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class Name</th>
+      <th>Subject Name</th>
+      <th>Trainer Name</th>
+      <th>Rom Name</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Status</th>
+      
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tsessions.each do |tsession| %>
+      <tr>
+        <td><%= tsession.training_class.class_name %></td>
+        <td><%= tsession.subject.subject_name %></td>
+        <td><%= tsession.user.name %></td>
+        <td><%= tsession.room.room_name %></td>
+        <td><%= tsession.start_time %></td>
+        <td><%= tsession.end_time %></td>
+        <td><%= tsession.status %></td>
+        
+        <td><%= link_to 'Show', tsession %></td>
+        <td><%= link_to 'Edit', edit_tsession_path(tsession) %></td>
+        <td><%= link_to 'Destroy', tsession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session', new_tsession_path %>

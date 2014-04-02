@@ -1,0 +1,33 @@
+<% provide(:title, 'Sign in') %> 
+<h1>Log in</h1>
+
+<div class=" container">
+ 
+    <div class="span4"></div><!-- /span4 -->
+    <div class="span4 middle">
+      <div class="loginbox">
+        <img src="assets/don.jpg" alt="" class="img-circle">
+        
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <br>
+      <br>  
+      <%= f.label :username %>
+      <%= f.password_field :username %>
+      <br>
+      <br>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+
+      <%= f.submit "Log in", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  
+  </div>
+  </div>
+  <div class="span4"></div>
+ 
+</div>

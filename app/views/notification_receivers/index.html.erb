@@ -1,0 +1,33 @@
+<h1>Listing notification_receivers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Notification</th>
+      <th>Receiver</th>
+      <th>Status</th>
+      <th>Notification</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notification_receivers.each do |notification_receiver| %>
+      <tr>
+        <td><%= notification_receiver.notification_id %></td>
+        <td><%= notification_receiver.receiver_id %></td>
+        <td><%= notification_receiver.status %></td>
+        <td><%= notification_receiver.notification %></td>
+        <td><%= link_to 'Show', notification_receiver %></td>
+        <td><%= link_to 'Edit', edit_notification_receiver_path(notification_receiver) %></td>
+        <td><%= link_to 'Destroy', notification_receiver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notification receiver', new_notification_receiver_path %>

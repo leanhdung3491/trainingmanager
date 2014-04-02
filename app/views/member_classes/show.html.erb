@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User ID:</strong>
+  <%= @member_class.user_id %>
+</p>
+<p>
+  <strong>Full Name:</strong>
+  <%= @member_class.user.name %>
+</p>
+<p>
+  <strong>Birthday:</strong>
+  <%= @member_class.user.birthday %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @member_class.user.email %>
+</p>
+
+
+
+<!--<%= link_to 'Edit', edit_member_class_path(@member_class),:class => "btn btn-large btn-primary" %> 
+-->
+<%= link_to 'Back', member_classes_path,:class => "btn btn-large btn-primary" %>

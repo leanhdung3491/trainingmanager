@@ -1,0 +1,42 @@
+<h1>Add New Member</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Day of Birth</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= form_tag("/member_classes/addmember/", :method => "post") do %>
+        
+          
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.birthday %></td>
+            <td><%= user.email %></td> 
+            <td><%= check_box_tag 'users_add[]', user.id %> <%= user.id %></td>
+          </tr>
+        <% end %>
+        <p hidden><%= check_box_tag 'tclassid', params[:tclassid], checked = true %></p>
+  </tbody>
+
+</table>
+<br>
+<!--<%= submit_tag("Add Member", :class =>"btn btn-large btn-primary", onclick: "go_to_classes()") %>
+-->
+<%= submit_tag("Add Member", :class =>"btn btn-large btn-primary")%> 
+
+     <%end%>
+
+<script type="text/javascript">
+    function go_to_classes(){
+        window.location = "http://192.168.10.101:3000/member_classes/index";
+    }
+</script>

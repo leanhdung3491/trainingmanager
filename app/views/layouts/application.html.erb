@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HELLO CENTER - Training Manager</title><!--<%= yield(:title) %>-->
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" , media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+		<%= render 'layouts/shim' %>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+	<link rel='stylesheet' id='prettyphoto-css'  href="assets/css/prettyPhoto.css" type='text/css' media='all'>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    
+  	<!-- Google Fonts call. Font Used Open Sans & Open Sans Condensed -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
+    
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+
+  	<!-- JQuery must init first for prettyPhoto script -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+
+  	<!-- prettyPhoto Initialization -->
+	<script type="text/javascript" charset="utf-8">
+	  $(document).ready(function(){
+	    $("a[rel^='prettyPhoto']").prettyPhoto();
+	  });
+	</script>
+
+	 <!-- Le javascript
+    ================================================== -->
+	<script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/theme.js"></script>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>">
+				<%= value %>
+			</div>
+			<% end %>
+			<%= yield %>
+
+			<%= render 'layouts/footer' %>
+
+			<!--show debug information to the sign -->
+
+		</div>
+		<!--<%= debug(params) if Rails.env.development? %>-->	
+	</body>
+</html>

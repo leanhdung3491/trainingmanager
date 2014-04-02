@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  class_id: 1
+  subject_id: 1
+  room_id: 1
+  trainer_id: 1
+  start_time: 2014-03-17
+  end_time: 2014-03-17
+  status: MyString
+  training_class_id: 
+  user_id: 
+  room_id: 
+  subject_id: 
+  member_class_id: 
+
+two:
+  class_id: 1
+  subject_id: 1
+  room_id: 1
+  trainer_id: 1
+  start_time: 2014-03-17
+  end_time: 2014-03-17
+  status: MyString
+  training_class_id: 
+  user_id: 
+  room_id: 
+  subject_id: 
+  member_class_id: 

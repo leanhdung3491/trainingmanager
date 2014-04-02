@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Class ID :</strong>
+  <%= @tsession.training_class_id %>
+</p>
+
+<p>
+  <strong>Subject ID :</strong>
+  <%= @tsession.subject_id %>
+</p>
+
+<p>
+  <strong>Room ID :</strong>
+  <%= @tsession.room_id %>
+</p>
+
+<p>
+  <strong>Trainer ID :</strong>
+  <%= @tsession.user_id %>
+</p>
+
+<p>
+  <strong>Start Time:</strong>
+  <%= @tsession.start_time %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @tsession.end_time %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tsession.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_tsession_path(@tsession) %> |
+<%= link_to 'Back', tsessions_path %>

@@ -1,0 +1,41 @@
+<h1>Listing Member of Class</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Day of Birth</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @member_class.each do |member_class| %>
+      <tr>
+        <td><%= member_class.user.name%></td>
+       <!-- <td><%= member_class.user_id %></td>-->
+        <td><%= member_class.user.birthday %></td>
+        <td><%= member_class.user.email %></td>
+        
+        <td><%= link_to image_tag("show.png", :border => 0, :alt => '', :title => '',:class => 'icon'),member_class %></td>
+        <!--<td><%= link_to image_tag("edit.png",:size => "25x25", :border => 0, :alt => '', :title => ''), edit_member_class_path(member_class) %></td>
+      -->
+        <td><%= link_to image_tag("delete.png",:size => "25x25", :border => 0, :alt => '', :title => ''), member_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<!--<%= button_tag "Add Member", :type=>"button", :class =>"btn btn-large btn-primary", onclick: "go_to_classes()" %>
+-->
+<%= link_to 'Add Member', new_member_class_path(:tclassid=>@training_class_id),:class => "btn btn-large btn-primary" %> 
+
+<script type="text/javascript">
+    function go_to_classes(){
+        window.location = "http://192.168.10.101:3000/member_classes/new";
+    }
+</script>

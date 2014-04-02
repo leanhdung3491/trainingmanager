@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign up') %> 
+<body>
+<div class=" container">
+	<div class="row">
+		<div class="span3"></div>
+		
+		<div class="span6 middle">
+    		<div id="register-wraper">
+    		    <form id="register-form" class="form">
+    		        <h1>User Register</h1>
+    		    
+    		        <div class="body">
+
+		<%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
+			<%= f.label "Full Name" %>
+			<%= f.password_field  :name %>
+
+			<%= f.label "User Name" %>
+			<%= f.password_field  :username %>
+	
+			<%= f.label :email %>
+			<%= f.password_field  :email %>
+			
+			<%= f.label :birthday %>
+			<%= f.date_select :birthday, start_year:1900, end_year:Date.today.year-6 %>
+	
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+	
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation %>
+	
+			<%= f.submit "Create my account", class: "btn btn-success" %>
+		<% end %>
+	</div><!-- /form footer -->
+    		    </form><!-- /form -->
+    		</div><!-- /register-wraper -->
+		</div><!-- /span6 -->
+		
+		<div class="span3"></div>
+	</div>	
+</div>
+</body>

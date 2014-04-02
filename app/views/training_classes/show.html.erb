@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Class Name:</strong>
+  <%= @training_class.class_name %>
+</p>
+
+<p>
+  <strong>Star Date:</strong>
+  <%= @training_class.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @training_class.end_date %>
+</p>
+
+<p>
+  <strong>Course Name:</strong>
+  <%= @training_class.course.course_name %>
+</p>
+
+<%= link_to 'Edit', edit_training_class_path(@training_class),:class => "btn btn-large btn-primary" %> 
+
+
+
+<%= link_to 'Back', training_classes_path,:class => "btn btn-large btn-primary"%>
+<br>
+<br>
+<!--<%= button_tag 'Show Member',:class => "btn btn-large btn-primary",onclick: "go_to_member_classes()" %> 
+-->
+<%= link_to 'Show Member', member_classes_path(:tclassid=>@training_class.id),:class => "btn btn-large btn-primary" %> 
+
+
+
+<script type="text/javascript">
+    function go_to_member_classes(){
+        window.location = "http://192.168.10.101:3000/member_classes";
+    }
+</script>

@@ -1,0 +1,36 @@
+<h1>Listing Classes</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Class name</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Course name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @training_classes.each do |training_class| %>
+      <tr>
+        <td><%= training_class.class_name %></td>
+        <td><%= training_class.start_date %></td>
+        <td><%= training_class.end_date %></td>
+        <td><%= training_class.course.course_name %></td>
+        <td><%= link_to image_tag("show.png", :border => 0, :alt => '', :title => '',:class => 'icon'),training_class %></td>
+        <td><%= link_to image_tag("edit.png", :border => 0, :alt => '', :title => '',:class => 'icon'), edit_training_class_path(training_class) %></td>
+        <td><%= link_to image_tag("delete.png", :border => 0, :alt => '', :title => '',:class => 'icon'), training_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= button_tag "New Class", :type=>"button", :class =>"btn btn-large btn-primary", onclick: "go_to_classes()" %>
+<script type="text/javascript">
+    function go_to_classes(){
+        window.location = "http://192.168.10.101:3000/training_classes/new";
+    }
+</script>

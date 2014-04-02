@@ -1,0 +1,54 @@
+<%= form_for(@training_class) do |f| %>  
+  <table>
+  	<tr>
+  		<td><%= f.label "Class Name" %></td>
+  		<td><%= f.text_field :class_name %></td>
+  	</tr>
+    
+  	<tr>
+  		<td><%= f.label "Start Date" %></td>
+  		<td><%= f.date_select :start_date %></td>
+  	</tr>
+
+  	<tr>
+  		<td><%= f.label "End Date" %></td>
+  		<td><%= f.date_select :end_date %></td>
+  	</tr>
+  	<tr>
+  		<td><%= f.label "Course" %></td>
+  		<td>
+  			<table>
+			  <thead>
+			    <tr>
+			      <th>Select</th>
+			      <th>Course Name</th>
+			      <th>Description</th>			      
+			    </tr>
+			  </thead>
+			
+			  <tbody>
+			    <% @courses.each do |course| %>
+			      <tr>
+			        <td><%= radio_button_tag(:course, course.id, false, :checked=>(course==@training_class.course)) %></td>
+			        <td><%= course.course_name %></td>
+			        <td><%= course.description %></td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+  		</td>
+  	</tr>
+  </table>
+  
+  <div class="actions" style="text-align: center">
+    <%= f.submit "Save", :class => "btn btn-large btn-primary" %>
+    <%= f.button "Cancel", :type => "reset", :class => "btn btn-large btn-primary" %>
+    <%= f.button "Back", :type=>"button", :class =>"btn btn-large btn-primary", onclick: "back_to_classes()" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    function back_to_classes(){
+        window.location = "http://192.168.10.101:3000/training_classes";
+    }
+</script>

@@ -1,0 +1,29 @@
+<footer class="footer">
+<div id="twitterwrap">
+        <img src="assets/twitter.png" alt="">
+        <br>
+        <br>
+        <div id="jstwitter" class="clearfix">
+            <ul id="twitter_update_list"></ul>
+        </div>
+        <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script><!-- Script Needed to load the Tweets -->
+        <script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline/basicoh_.json?callback=twitterCallback2&count=1"></script>
+    </div>
+    <div id="footerwrap">
+    <em>MADE IN TRAINING MANAGER TEAM</em>
+    <br>
+    <br>
+
+    <p><center>ST. HOANG DIEU.</center></p>
+    <p><center>2014, DA NANG </center></p>
+    <br>
+    <p><center>
+                        <%= link_to "GET DIRECTIONS", contact_path %>
+    </center></p>
+    <br>
+    <div class="social_icons">
+        <a href="#"><img src="assets/facebook.png" width="30" height="30" alt="Facebook"></a>
+        <a href="#"><img src="assets/gplus.png" width="30" height="30" alt="GooglePlus"></a>
+        <a href="#"><img src="assets/twitter1.png" width="30" height="30" alt="Twitter"></a>
+    </div><!-- End of social icons -->
+</footer>

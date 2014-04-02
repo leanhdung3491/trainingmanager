@@ -1,0 +1,1 @@
+json.extract! @tsession, :id, :training_class_id, :subject_id, :room_id, :user_id, :start_time, :end_time, :status, :training_class_id, :user_id, :room_id, :subject_id, :member_class_id, :created_at, :updated_at
